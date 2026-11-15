@@ -1,0 +1,61 @@
+#VRML_SIM R2025a utf8
+
+PROTO TemperatureSensor [
+  field SFVec3f translation 0 0 0
+  field SFRotation rotation 0 0 1 0
+  field SFString controller "TemperatureSensorController"
+  field SFFloat baseTemperature 25
+  field SFFloat baseHumidity 60
+]
+{
+  Robot {
+    translation IS translation
+    rotation IS rotation
+    name "GreenhouseSensor"
+    controller IS controller
+    customData ""
+    children [
+      # Sensor enclosure
+      Shape {
+        appearance PBRAppearance {
+          baseColor 0.18 0.20 0.22
+          roughness 0.6
+        }
+        geometry Box {
+          size 0.12 0.035 0.08
+        }
+      }
+
+      # Display screen on the front (-Y)
+      Transform {
+        translation 0 -0.019 0.012
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0.1 0.75 0.65
+              emissiveColor 0.02 0.1 0.08
+            }
+            geometry Box {
+              size 0.075 0.003 0.032
+            }
+          }
+        ]
+      }
+
+      # Ventilation slots
+      Transform {
+        translation 0 -0.019 -0.018
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0.04 0.04 0.04
+            }
+            geometry Box {
+              size 0.065 0.003 0.003
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
