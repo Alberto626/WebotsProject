@@ -1,0 +1,6 @@
+{
+  "mode": "Fixed",
+  "starting_soil_index": 450.0,
+  "base_temperature_c": 25.0,
+  "base_humidity_percent": 60.0
+}

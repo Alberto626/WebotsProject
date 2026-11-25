@@ -1,0 +1,56 @@
+GREENHOUSE AI - WEBOTS INTEGRATION TEST
+
+INSTALL ON PATRICIA'S COMPUTER
+1. Close the running Webots world.
+2. Extract Greenhouse_AI_Test.zip to a temporary folder.
+3. Copy ALL CONTENTS of the extracted Greenhouse_AI_Test folder into:
+   C:\Users\pguzma25\Desktop\WebotsProject-main
+   Merge the controllers and worlds folders. Do not put the entire extracted
+   folder inside WebotsProject-main: its CONTENTS belong there.
+   The included model is a byte-for-byte copy of the uploaded model.
+4. In Webots choose File > Open World and select:
+   WebotsProject-main\worlds\Agriculture_AI_Test.wbt
+5. Press Play. The simulation view should display dataset readings and AI codes.
+   The console prints the Python executable and scikit-learn version at startup.
+
+WHAT THIS DOES
+- Uses the existing greenhouse scene, textures, and PROTO files.
+- Adds a new controller, IrrigationAIReplay, and a separate test world.
+- Reads one complete CSV input row about once per simulated second.
+- Calls the existing Random Forest with the original feature names and order.
+- Displays input values, AI pump code, and the recorded dataset pump code.
+- Records predictions to a uniquely named CSV in the project's logs folder.
+- Replays all 3,000 rows once; reset the simulation to restart the replay.
+- Stops the original sensor controllers in this test world so their generated
+  readings are not confused with the dataset inputs supplied to the model.
+
+LIMITS AND NEXT STEP
+This is an integration test on training-dataset inputs, not an independent model
+evaluation or a working irrigation simulation. Dataset row order is not assumed
+to represent time. No pump is actuated, no soil moisture dynamics are simulated,
+and no water savings are measured. Codes 0 and 1 have NOT been assigned physical
+ON/OFF meanings. The dataset does not document the soil-reading calibration.
+The next step is to define explicit simulation assumptions and add feedback:
+watering changes moisture, which changes future model inputs.
+
+ENVIRONMENT
+Requires the already-created project .venv with Python 3.12,
+scikit-learn 1.6.1, pandas, and joblib. The new controller's runtime.ini uses
+Patricia's current absolute Python path; edit it if the project is moved.
+No activation or global Python preference changes are needed.
+Keep the .python runtime folder in place: .venv depends on it.
+
+FILES AND RESTORE
+The original Agriculture.wbt, controllers, and PROTO files are not modified.
+Reopen Agriculture.wbt to return to the original sensor simulation.
+The test world still needs the existing project's protos and image files;
+the patch ZIP alone is not a standalone greenhouse project.
+Do not commit local .venv, .python, .tools, cache folders, logs, or an
+absolute runtime.ini Python path to a shared repository.
+
+DATA SOURCE
+Kaur, A.; Bhatt, D. P.; Raja, L. (2023). Soil Moisture, Air temperature,
+humidity, and Motor on/off Monitoring data. Mendeley Data, Version 1.
+https://doi.org/10.17632/fpdwmm7nrb.1
+Source dataset license: CC BY-NC 3.0.
+CSV data are included unchanged under a shorter filename for this test.

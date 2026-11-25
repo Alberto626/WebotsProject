@@ -1,0 +1,126 @@
+#VRML_SIM R2025a utf8
+
+PROTO TomatoPlant [
+  field SFVec3f translation 0 0 0
+  field SFRotation rotation 0 0 1 0
+  field SFString name "tomato plant"
+  field SFColor leafColor 0.12 0.5 0.12
+  field SFColor fruitColor 0.85 0.04 0.02
+]
+{
+  Solid {
+    translation IS translation
+    rotation IS rotation
+    name IS name
+
+    children [
+      # Main stem
+      Pose {
+        translation 0 0 0.3
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0.16 0.35 0.08
+              roughness 1
+              metalness 0
+            }
+            geometry Box {
+              size 0.025 0.025 0.6
+            }
+          }
+        ]
+      }
+
+      # Lower left leaf
+      Pose {
+        translation -0.1 0 0.2
+        rotation 0 1 0 0.35
+        children [
+          Shape {
+            appearance DEF LEAF_APPEARANCE PBRAppearance {
+              baseColor IS leafColor
+              roughness 1
+              metalness 0
+            }
+            geometry DEF LEAF_GEOMETRY Sphere {
+              radius 1
+              subdivision 2
+            }
+          }
+        ]
+        scale 0.12 0.045 0.012
+      }
+
+      # Lower right leaf
+      Transform {
+        translation 0.1 0 0.3
+        rotation 0 1 0 -0.35
+        scale 0.12 0.045 0.012
+        children [
+          Shape {
+            appearance USE LEAF_APPEARANCE
+            geometry USE LEAF_GEOMETRY
+          }
+        ]
+      }
+
+      # Upper left leaf
+      Transform {
+        translation -0.09 0 0.43
+        rotation 0 1 0 0.45
+        scale 0.1 0.04 0.012
+        children [
+          Shape {
+            appearance USE LEAF_APPEARANCE
+            geometry USE LEAF_GEOMETRY
+          }
+        ]
+      }
+
+      # Upper right leaf
+      Transform {
+        translation 0.08 0 0.53
+        rotation 0 1 0 -0.45
+        scale 0.09 0.035 0.012
+        children [
+          Shape {
+            appearance USE LEAF_APPEARANCE
+            geometry USE LEAF_GEOMETRY
+          }
+        ]
+      }
+
+      # First tomato
+      Pose {
+        translation 0.065 -0.045 0.37
+        children [
+          Shape {
+            appearance DEF TOMATO_APPEARANCE PBRAppearance {
+              baseColor IS fruitColor
+              roughness 0.4
+              metalness 0
+            }
+            geometry Sphere {
+              radius 0.045
+              subdivision 2
+            }
+          }
+        ]
+      }
+
+      # Second tomato
+      Pose {
+        translation -0.055 -0.04 0.49
+        children [
+          Shape {
+            appearance USE TOMATO_APPEARANCE
+            geometry Sphere {
+              radius 0.035
+              subdivision 2
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

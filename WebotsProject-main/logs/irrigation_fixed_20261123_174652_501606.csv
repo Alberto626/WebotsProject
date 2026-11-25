@@ -1,0 +1,1 @@
+simulation_time_s,controller_mode,temperature_c,air_humidity_percent,soil_index,ai_code,pump_command_on,cumulative_commanded_on_time_s,fixed_period_s,fixed_on_s

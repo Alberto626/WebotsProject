@@ -1,0 +1,826 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+IMPORTABLE EXTERNPROTO "../protos/TemperatureSensor.proto"
+EXTERNPROTO "../protos/SoilMoistureSensor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/plants/protos/PottedTree.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.2609465595430173 0.3227499987819849 0.9098018088292039 1.3241302307478027
+  position 1.4361807147535302 -0.8403068607840757 2.3288504005586814
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 10 10
+}
+DEF bed_left Solid {
+  translation 0 -1.38 0.26
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "soil.jpg"
+          ]
+        }
+      }
+      geometry Box {
+        size 5.5 1 0.5
+      }
+    }
+  ]
+  name "solid(50)"
+}
+DEF bed_right Solid {
+  translation 0 1.39 0.26
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "soil.jpg"
+          ]
+        }
+      }
+      geometry Box {
+        size 5.5 1 0.5
+      }
+    }
+  ]
+  name "solid(51)"
+}
+DEF PLANT_1 PottedTree {
+  translation 2.32 1.26 0.51
+}
+PottedTree {
+  translation 1.7 1.26 0.51
+  name "potted tree(1)"
+}
+PottedTree {
+  translation 1.02 1.26 0.51
+  name "potted tree(2)"
+}
+PottedTree {
+  translation 0.36 1.26 0.51
+  name "potted tree(3)"
+}
+PottedTree {
+  translation -0.28 1.26 0.51
+  name "potted tree(4)"
+}
+PottedTree {
+  translation -2.16 1.26 0.51
+  name "potted tree(5)"
+}
+PottedTree {
+  translation -2.16 0.68 0.51
+  name "potted tree(6)"
+}
+PottedTree {
+  translation -2.16 0.12 0.51
+  name "potted tree(7)"
+}
+PottedTree {
+  translation -2.16 -0.48 0.51
+  name "potted tree(8)"
+}
+PottedTree {
+  translation -2.16 -1.19 0.51
+  name "potted tree(9)"
+}
+PottedTree {
+  translation 2.32 -1.45 0.51
+  name "potted tree(10)"
+}
+PottedTree {
+  translation 1.64 -1.45 0.51
+  name "potted tree(11)"
+}
+PottedTree {
+  translation 0.9 -1.45 0.51
+  name "potted tree(12)"
+}
+PottedTree {
+  translation 0.19 -1.45 0.51
+  name "potted tree(13)"
+}
+PottedTree {
+  translation -0.54 -1.45 0.51
+  name "potted tree(14)"
+}
+DEF bed_right Solid {
+  translation -2.25 0.03 0.26
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "soil.jpg"
+          ]
+        }
+      }
+      geometry Box {
+        size 1 1.9 0.5
+      }
+    }
+  ]
+  name "solid(52)"
+}
+DEF triangle Solid {
+  translation 2.96 -7.74902e-07 0
+  rotation 0 0 1 -1.5707953071795862
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 1 1
+        transparency 0.5
+      }
+      geometry IndexedFaceSet {
+        coord Coordinate {
+          point [
+            0 0 3
+            2 0 2.2
+            -2 0 2.2
+          ]
+        }
+        coordIndex [
+          0, 1, 2, -1
+        ]
+      }
+    }
+  ]
+  name "solid(37)"
+}
+DEF triangle Solid {
+  translation -2.98 -6.83142e-06 0.01
+  rotation 0 0 1 -1.5707953071795862
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 1 1
+        transparency 0.5
+      }
+      geometry IndexedFaceSet {
+        coord Coordinate {
+          point [
+            0 0 3
+            2 0 2.2
+            -2 0 2.2
+          ]
+        }
+        coordIndex [
+          0, 1, 2, -1
+        ]
+      }
+    }
+  ]
+  name "solid(38)"
+}
+DEF front-left_post Solid {
+  translation -2.95 -0.95 1.1
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 0.1 2.2
+      }
+    }
+  ]
+}
+DEF front-left_post Solid {
+  translation -2.95 -1.95 1.1
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 0.1 2.2
+      }
+    }
+  ]
+  name "solid(30)"
+}
+DEF front-right_post Solid {
+  translation -2.95 1.95 1.1
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 0.1 2.2
+      }
+    }
+  ]
+  name "solid(1)"
+}
+DEF front-right_post Solid {
+  translation -2.95 0.95 1.1
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 0.1 2.2
+      }
+    }
+  ]
+  name "solid(31)"
+}
+DEF front-right_post Solid {
+  translation -1.95 1.95 1.1
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 0.1 2.2
+      }
+    }
+  ]
+  name "solid(17)"
+}
+DEF front-right_post Solid {
+  translation -0.95 1.95 1.1
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 0.1 2.2
+      }
+    }
+  ]
+  name "solid(18)"
+}
+DEF front-right_post Solid {
+  translation 0.06 1.95 1.1
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 0.1 2.2
+      }
+    }
+  ]
+  name "solid(19)"
+}
+DEF front-right_post Solid {
+  translation 1.06 1.95 1.1
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 0.1 2.2
+      }
+    }
+  ]
+  name "solid(20)"
+}
+DEF front-right_post Solid {
+  translation 2.06 1.95 1.1
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 0.1 2.2
+      }
+    }
+  ]
+  name "solid(21)"
+}
+DEF back-left_post Solid {
+  translation 2.95 -1.95 1.1
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 0.1 2.2
+      }
+    }
+  ]
+  name "solid(2)"
+}
+DEF back-left_post Solid {
+  translation 2.95 -0.95 1.1
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 0.1 2.2
+      }
+    }
+  ]
+  name "solid(26)"
+}
+DEF back-left_post Solid {
+  translation 2.95 -0.01 2.57
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 0.1 0.9
+      }
+    }
+  ]
+  name "solid(27)"
+}
+DEF back-left_post Solid {
+  translation -2.96 -0.01 2.57
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 0.1 0.9
+      }
+    }
+  ]
+  name "solid(33)"
+}
+DEF back-left_post Solid {
+  translation 2.95 -0.45 1.1
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 0.1 2.2
+      }
+    }
+  ]
+  name "solid(32)"
+}
+DEF back-left_post Solid {
+  translation 1.94 -1.95 1.1
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 0.1 2.2
+      }
+    }
+  ]
+  name "solid(12)"
+}
+DEF back-left_post Solid {
+  translation 0.95 -1.95 1.1
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 0.1 2.2
+      }
+    }
+  ]
+  name "solid(13)"
+}
+DEF back-left_post Solid {
+  translation -0.06 -1.95 1.1
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 0.1 2.2
+      }
+    }
+  ]
+  name "solid(14)"
+}
+DEF back-left_post Solid {
+  translation -1.06 -1.95 1.1
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 0.1 2.2
+      }
+    }
+  ]
+  name "solid(15)"
+}
+DEF back-left_post Solid {
+  translation -2.06 -1.95 1.1
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 0.1 2.2
+      }
+    }
+  ]
+  name "solid(16)"
+}
+DEF back-right_post Solid {
+  translation 2.95 1.95 1.1
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 0.1 2.2
+      }
+    }
+  ]
+  name "solid(3)"
+}
+DEF back-right_post Solid {
+  translation 2.95 0.96 1.1
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 0.1 2.2
+      }
+    }
+  ]
+  name "solid(25)"
+}
+DEF back-right_post Solid {
+  translation 2.95 0.46 1.1
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 0.1 2.2
+      }
+    }
+  ]
+  name "solid(28)"
+}
+DEF left_side_wall Solid {
+  translation 0 -1.98 1.1
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 1 1
+        transparency 0.1
+      }
+      geometry Box {
+        size 6 0.04 2.1
+      }
+    }
+  ]
+  name "solid(10)"
+}
+DEF left_side_wall Solid {
+  translation 2.96 -1.16 1.1
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 1 1
+        transparency 0.1
+      }
+      geometry Box {
+        size 0.08 1.5 2.1
+      }
+    }
+  ]
+  name "solid(34)"
+}
+DEF left_side_wall Solid {
+  translation 2.96 1.21 1.1
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 1 1
+        transparency 0.1
+      }
+      geometry Box {
+        size 0.08 1.5 2.1
+      }
+    }
+  ]
+  name "solid(36)"
+}
+DEF left_side_wall Solid {
+  translation -2.92 0 1.1
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 1 1
+        transparency 0.1
+      }
+      geometry Box {
+        size 0.08 3.96 2.1
+      }
+    }
+  ]
+  name "solid(35)"
+}
+DEF right_side_wall Solid {
+  translation 0 1.98 1.1
+  children [
+    Shape {
+      appearance PBRAppearance {
+        transparency 0.1
+      }
+      geometry Box {
+        size 6 0.04 2.1
+      }
+    }
+  ]
+  name "solid(11)"
+}
+DEF Left_top_beam Solid {
+  translation 0 -1.95 2.15
+  children [
+    Shape {
+      geometry Box {
+        size 6 0.1 0.1
+      }
+    }
+  ]
+  name "solid(4)"
+}
+DEF Left_top_beam Solid {
+  translation 0 -1.95 0.04
+  children [
+    Shape {
+      geometry Box {
+        size 6 0.1 0.1
+      }
+    }
+  ]
+  name "solid(23)"
+}
+DEF right_top_beam Solid {
+  translation 0 1.95 2.15
+  children [
+    Shape {
+      geometry Box {
+        size 6 0.1 0.1
+      }
+    }
+  ]
+  name "solid(5)"
+}
+DEF right_top_beam Solid {
+  translation 0 -0.01 2.98
+  children [
+    Shape {
+      geometry Box {
+        size 6 0.1 0.1
+      }
+    }
+  ]
+  name "solid(49)"
+}
+DEF right_top_beam Solid {
+  translation 0 1.95 0.04
+  children [
+    Shape {
+      geometry Box {
+        size 6 0.1 0.1
+      }
+    }
+  ]
+  name "solid(22)"
+}
+DEF front_bottom_beam Solid {
+  translation -2.95 0 0.05
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 4 0.1
+      }
+    }
+  ]
+  name "solid(6)"
+}
+DEF front_bottom_beam Solid {
+  translation -2.95 0 2.15
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 4 0.1
+      }
+    }
+  ]
+  name "solid(29)"
+}
+DEF back_bottom_beam Solid {
+  translation 2.95 0 0.05
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 4 0.1
+      }
+    }
+  ]
+  name "solid(7)"
+}
+DEF back_bottom_beam Solid {
+  translation 2.95 0 2.15
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 4 0.1
+      }
+    }
+  ]
+  name "solid(24)"
+}
+DEF right_roof Solid {
+  translation 0 1 2.6
+  rotation 1 0 0 -0.381
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 1 1
+        transparency 0.5
+      }
+      geometry Box {
+        size 6 2.154 0.08
+      }
+    }
+  ]
+  name "solid(8)"
+}
+DEF right_roof Solid {
+  translation 1.59 0.98141 2.55352
+  rotation 1 0 0 -0.381
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 2.154 0.1
+      }
+    }
+  ]
+  name "solid(39)"
+}
+DEF right_roof Solid {
+  translation 0.59 0.98141 2.55352
+  rotation 1 0 0 -0.381
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 2.154 0.1
+      }
+    }
+  ]
+  name "solid(40)"
+}
+DEF right_roof Solid {
+  translation -0.41 0.98141 2.55352
+  rotation 1 0 0 -0.381
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 2.154 0.1
+      }
+    }
+  ]
+  name "solid(41)"
+}
+DEF right_roof Solid {
+  translation -1.42 0.98141 2.55352
+  rotation 1 0 0 -0.381
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 2.154 0.1
+      }
+    }
+  ]
+  name "solid(42)"
+}
+DEF right_roof Solid {
+  translation -2.42 0.98141 2.55352
+  rotation 1 0 0 -0.381
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 2.154 0.1
+      }
+    }
+  ]
+  name "solid(43)"
+}
+DEF right_roof Solid {
+  translation 1.59 -0.98141 2.55352
+  rotation 1 0 0 0.381
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 2.154 0.1
+      }
+    }
+  ]
+  name "solid(44)"
+}
+DEF right_roof Solid {
+  translation 0.59 -0.98141 2.55352
+  rotation 1 0 0 0.381
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 2.154 0.1
+      }
+    }
+  ]
+  name "solid(45)"
+}
+DEF right_roof Solid {
+  translation -0.41 -0.98141 2.55352
+  rotation 1 0 0 0.381
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 2.154 0.1
+      }
+    }
+  ]
+  name "solid(46)"
+}
+DEF right_roof Solid {
+  translation -1.42 -0.98141 2.55352
+  rotation 1 0 0 0.381
+  children [
+    Solid {
+    }
+  ]
+  name "solid(47)"
+}
+DEF right_roof Solid {
+  translation -2.42 -0.98141 2.55352
+  rotation 1 0 0 0.381
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 2.154 0.1
+      }
+    }
+  ]
+  name "solid(48)"
+}
+DEF left_roof Solid {
+  translation 0 -1 2.6
+  rotation 1 0 0 0.3809999999999999
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 1 1
+        transparency 0.5
+      }
+      geometry Box {
+        size 6 2.154 0.08
+      }
+    }
+  ]
+  name "solid(9)"
+}
+DEF GREENHOUSE_SENSOR TemperatureSensor {
+  translation 0 1.87 1.32
+}
+DEF SOIL_SENSOR SoilMoistureSensor {
+  translation 0 0 0.16
+}
+DEF IRRIGATION_SYSTEM Robot {
+  controller "IrrigationController"
+  customData "pump_on=0"
+  supervisor TRUE
+}
+Solid {
+  translation 0 0 0.64
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          shininess 0.3
+        }
+        texture ImageTexture {
+          url [
+            "tomatotexture.jpg"
+          ]
+        }
+      }
+      geometry Sphere {
+        radius 0.05
+      }
+    }
+  ]
+  name "solid(53)"
+}
+DEF IRRIGATION_PUMP Solid {
+  translation 0.6 0 0.15
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.15 0.18 0.22
+        roughness 0.5
+        metalness 0.2
+      }
+      geometry Box {
+        size 0.3 0.25 0.3
+      }
+    }
+    Pose {
+      translation 0.23 0 0.05
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.5 0.5 0.5
+            roughness 0.4
+            metalness 0.6
+          }
+          geometry Box {
+            size 0.18 0.06 0.06
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0 0 0.18
+      children [
+        Shape {
+          appearance DEF PUMP_APPEARANCE PBRAppearance {
+            baseColor 0.3 0.3 0.3
+            roughness 0.4
+            metalness 0
+          }
+          geometry Sphere {
+            radius 0.025
+          }
+        }
+      ]
+    }
+  ]
+  name "simulated irrigation pump"
+}

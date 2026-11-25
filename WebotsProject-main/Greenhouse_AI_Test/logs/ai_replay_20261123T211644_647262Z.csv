@@ -1,0 +1,4 @@
+simulation_time_s,dataset_row,Soil Moisture,Temperature,Air Humidity,dataset_pump_code,predicted_pump_code,mode
+0.032,1,683.8029058,29.18490786,71.78969946,0,0,dataset_replay
+1.056,2,408.5715671,33.70720471,77.97739053,1,1,dataset_replay
+2.08,3,659.0920744,24.76031105,60.77628206,1,1,dataset_replay
